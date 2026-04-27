@@ -1,0 +1,234 @@
+:root {
+    --bg-dark: #050505;           
+    --card-bg: #0f0f12;          
+    --primary-purple: #8b5cf6;    
+    --primary-dark: #7c3aed;      
+    --border: rgba(139, 92, 246, 0.15); 
+    --text-main: #ffffff;
+    --text-dim: #9ca3af;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* NAVBAR */
+.navbar {
+    position: fixed; top: 0; width: 100%;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(15px);
+    z-index: 1000; padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo h2 { font-size: 1.5rem; color: var(--white); }
+.logo span { color: var(--primary-purple); }
+
+.nav-menu { display: flex; list-style: none; gap: 2.5rem; }
+.nav-menu a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 1.1rem; font-weight: 500; transition: 0.3s;
+}
+.nav-menu a:hover { color: var(--primary-purple); }
+
+/*-----------  HERO SECTION --------- */
+.hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: 120px; padding-bottom: 60px;
+}
+
+.hero-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center;
+}
+
+/* ----- CARD DE PERFIL -------- */
+.profile-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 32px; padding: 25px; text-align: center;
+}
+
+.profile-img-container {
+    width: 100%; aspect-ratio: 1/1; background: #16161a;
+    border-radius: 24px; margin-bottom: 20px; overflow: hidden;
+}
+
+.profile-img { width: 100%; height: 100%; object-fit: cover; }
+
+.profile-info h3 { font-size: 2rem; margin-bottom: 5px; }
+.profile-info p { color: var(--text-dim); margin-bottom: 15px; }
+
+.social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+.social-links a { color: var(--text-dim); font-size: 1.2rem; transition: 0.3s; }
+.social-links a:hover { color: var(--primary-purple); }
+
+.btn-sidebar {
+    display: block; text-decoration: none;
+    background: rgba(139, 92, 246, 0.1); color: var(--primary-purple);
+    padding: 12px; border-radius: 12px; border: 1px solid var(--border);
+    font-weight: 600; transition: 0.3s;
+}
+.btn-sidebar:hover { background: var(--primary-purple); color: white; }
+
+/* ------- TEXTO HERO -----------*/
+
+
+.hero-title {
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem;
+}
+
+.gradient-purple {
+    background: linear-gradient(to right, #a78bfa, #8b5cf6);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem; color: var(--text-dim);
+    max-width: 600px; margin-bottom: 3rem;
+}
+
+.hero-cta { display: flex; align-items: center; gap: 2rem; }
+
+.btn-main {
+    background: var(--primary-purple); color: white;
+    padding: 1.2rem 2.8rem; border-radius: 15px;
+    text-decoration: none; font-weight: 600; font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3); transition: 0.3s;
+}
+.btn-main:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+.btn-link {
+    color: var(--white); text-decoration: none;
+    font-weight: 500; font-size: 1.1rem; transition: 0.3s;
+}
+.btn-link:hover { color: var(--primary-purple); padding-left: 10px; }
+
+.hero-stats { display: flex; gap: 40px; margin-bottom: 3rem; }
+.stat-box span { font-size: 2.2rem; font-weight: 700; color: var(--white); }
+.stat-box p { color: var(--text-dim); font-size: 0.9rem; }
+
+.hero-social-pills {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px; /* Espaço antes dos botões de CTA */
+}
+
+.social-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 100px; /* Formato de pílula */
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-pill i {
+    font-size: 1.2rem;
+    color: var(--primary-purple);
+}
+
+.social-pill:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--primary-purple);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.1);
+}
+
+/*---------  SOBRE (ESTILO SEERA) --------- */
+
+
+.sobre { padding: 120px 0; border-top: 1px solid var(--border); }
+.sobre-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; align-items: center; }
+
+.seera-card {
+    height: 400px; background: var(--card-bg);
+    border: 1px solid var(--border); border-radius: 30px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px;
+}
+.seera-card i { font-size: 5rem; color: var(--primary-purple); opacity: 0.5; }
+
+.label-mini { font-size: 0.8rem; letter-spacing: 3px; color: var(--primary-purple); margin-bottom: 20px; display: block; }
+.title-modern { font-size: 3.2rem; font-weight: 600; margin-bottom: 30px; line-height: 1.2; }
+.highlight { color: var(--text-dim); }
+.text-p { font-size: 1.2rem; color: var(--text-dim); line-height: 1.8; }
+
+
+
+/* ----------- Tech specialtes --------------- */
+
+.tech-specialties {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.spec-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.spec-item i {
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+}
+
+.spec-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.spec-item:hover {
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 968px) {
+    .hero-container, .sobre-wrapper { grid-template-columns: 1fr; text-align: center; }
+    .hero-sidebar { order: 2; }
+    .hero-cta, .hero-stats { justify-content: center; }
+}
