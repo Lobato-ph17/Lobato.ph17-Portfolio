@@ -350,6 +350,25 @@ body {
     transform: scale(1.02);
 }
 
+.btn-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-card:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+}
+
+.btn-card.github:hover {
+    background: #33383e;
+}
+
+.btn-card.live:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--primary-purple);
+}
+
 /* ----------- Skills --------------- */
 
 .skills { padding: 100px 0; background: var(--bg-dark); }
