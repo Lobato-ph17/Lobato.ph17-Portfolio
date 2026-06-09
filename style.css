@@ -35,10 +35,19 @@ body {
 
 .navbar {
     position: fixed; top: 0; width: 100%;
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(15px);
+    background: transparent;
     z-index: 1000; padding: 1.5rem 0;
+    border-bottom: 1px solid transparent; 
+    transition: all 0.4s ease; 
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1rem 0; 
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -85,9 +94,11 @@ body {
 
 .hero-container {
     max-width: 1200px; margin: 0 auto; padding: 0 20px;
-    display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center;
+    display: grid; 
+    grid-template-columns: minmax(300px, 350px) 1fr;
+    gap: 60px; 
+    align-items: center;
 }
-
 /* ----- CARD DE PERFIL -------- */
 .profile-card {
     background: var(--card-bg);
@@ -189,6 +200,15 @@ body {
     box-shadow: 0 5px 15px rgba(139, 92, 246, 0.1);
 }
 
+/* ------- Leitura de parágrafos -----------*/
+
+.text-p, .card-v-desc, .hero-subtitle {
+    color: #cbd5e1; 
+    font-weight: 300; 
+    letter-spacing: 0.3px;
+}
+
+
 /*---------  SOBRE (ESTILO SEERA) --------- */
 
 
@@ -208,6 +228,17 @@ body {
 .highlight { color: var(--text-dim); }
 .text-p { font-size: 1.2rem; color: var(--text-dim); line-height: 1.8; }
 
+/*---------  Mini-titles (ESTILO SEERA) --------- */
+
+.label-mini {
+    font-size: 0.75rem;
+    letter-spacing: 4px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
 
 
 /* ----------- Tech specialtes --------------- */
@@ -285,7 +316,7 @@ body {
 
 /* Card Vertical Estilo Seera */
 .projeto-card-v {
-    background: rgba(15, 15, 18, 0.6); /* Cor base Seera */
+    background: rgba(15, 15, 18, 0.6); 
     border: 1px solid var(--border);
     border-radius: 28px;
     padding: 40px 30px;
@@ -324,7 +355,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    flex-grow: 1; /* Garante que os botões fiquem alinhados embaixo */
+    flex-grow: 1; 
 }
 
 /* Tags de Tecnologia */
@@ -345,6 +376,7 @@ body {
 }
 
 /* Ações/Botões do Card */
+
 .card-v-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -561,5 +593,69 @@ body {
     .card-v-actions {
         grid-template-columns: 1fr;
         gap: 10px;
+    }
+}
+
+
+/* --- Suporte para as animações de Scroll do JS --- */
+
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-hidden.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Suporte para o Menu Hamburguer no Mobile --- */
+
+@media (max-width: 768px) {
+    .hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+    }
+    
+    .hamburguer span {
+        width: 28px;
+        height: 3px;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    
+    .hamburguer.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburguer.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburguer.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -7px);
+    }
+
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: rgba(10, 10, 12, 0.95);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: calc(100vh - 80px);
+        text-align: center;
+        gap: 2rem;
+        padding-top: 3rem;
+        transition: 0.4s cubic-bezier(0.1, 1, 0.1, 1);
+        border-left: 1px solid var(--border);
+    }
+
+    .nav-menu.active {
+        right: 0;
     }
 }
