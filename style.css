@@ -761,4 +761,77 @@ body {
 }
 
 
+/* --- Botão Flutuante Voltar ao Topo + Progresso Circular --- */
 
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: #0b0b0e; 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    outline: none;
+    
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, visibility 0.4s;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.back-to-top:hover .arrow-icon {
+    color: var(--white);
+}
+
+
+.arrow-icon {
+    position: absolute;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    pointer-events: none;
+}
+
+
+.progress-circle {
+    transform: rotate(-90deg); 
+    width: 100%;
+    height: 100%;
+}
+
+.progress-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.05); 
+    stroke-width: 3px;
+}
+
+.progress-bar-circle {
+    fill: none;
+    stroke: var(--primary-purple); 
+    stroke-width: 3px;
+    stroke-linecap: round;
+    
+    
+    stroke-dasharray: 150.8;
+    stroke-dashoffset: 150.8;
+    
+    transition: stroke-dashoffset 0.1s ease-out;
+}
