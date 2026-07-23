@@ -1,0 +1,48 @@
+:root {
+    --bg-dark: #050505;           
+    --card-bg: #0f0f12;          
+    --primary-purple: #8b5cf6;    
+    --primary-dark: #7c3aed;      
+    --border: rgba(139, 92, 246, 0.15); 
+    --text-main: #ffffff;
+    --text-dim: #9ca3af;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.label-mini {
+    font-size: 0.75rem;
+    letter-spacing: 4px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.text-p, .card-v-desc, .hero-subtitle {
+    color: #cbd5e1; 
+    font-weight: 300; 
+    letter-spacing: 0.3px;
+}
