@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
-    
+
     const currentTheme = localStorage.getItem('theme');
 
     if (currentTheme === 'light') {
@@ -163,15 +163,60 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('theme', theme);
   });
 
-  // --- TOGGLE PT / EN (LABEL) ---
+    // --- DICIONÁRIO DE TRADUÇÃO (PT / EN) ---
+  const translations = {
+      pt: {
+          "nav-about": "Sobre",
+          "nav-projects": "Projetos",
+          "nav-skills": "Skills",
+          "nav-contact": "Contato",
+          "open-to-work": "DISPONÍVEL PARA TRABALHO",
+          "hero-subtitle-mini": "DESENVOLVEDOR FULL-STACK",
+          "hero-title": "Construindo Aplicações Escaláveis & de Alta Performance.",
+          "hero-desc": "Foco em criar software moderno, limpo e entregar experiências excepcionais.",
+          "btn-projects": "Ver Projetos",
+          "plstock-desc": "Sistema completo de gerenciamento de estoque, produtos e finanças para controle de vendas e catálogo reativo.",
+          "plmarket-desc": "Plataforma de e-commerce e marketplace com foco em performance, segurança e uma experiência de compra fluida."
+      },
+      en: {
+          "nav-about": "About",
+          "nav-projects": "Projects",
+          "nav-skills": "Skills",
+          "nav-contact": "Contact",
+          "open-to-work": "OPEN TO WORK",
+          "hero-subtitle-mini": "FULL-STACK DEVELOPER",
+          "hero-title": "Building Scalable & High-Performance Applications.",
+          "hero-desc": "Focused on creating modern, clean software and delivering exceptional experiences.",
+          "btn-projects": "View Projects",
+          "plstock-desc": "Complete inventory, product, and finance management system for sales control and reactive catalog.",
+          "plmarket-desc": "E-commerce and marketplace platform focused on performance, security, and seamless shopping experience."
+      }
+  };
+
+  // --- LOGICA DE TROCA DE IDIOMA ---
   const langToggleBtn = document.getElementById('lang-toggle');
   const langLabel = document.getElementById('lang-label');
 
+  function changeLanguage(lang) {
+      const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+      
+      elementsToTranslate.forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+              element.textContent = translations[lang][key];
+          }
+      });
+
+      langLabel.textContent = lang === 'pt' ? 'EN' : 'PT';
+
+      localStorage.setItem('preferred-lang', lang);
+  }
+  const savedLang = localStorage.getItem('preferred-lang') || 'pt';
+  changeLanguage(savedLang);
+
   langToggleBtn.addEventListener('click', () => {
-      if (langLabel.textContent === 'EN') {
-          langLabel.textContent = 'PT';
-      } else {
-          langLabel.textContent = 'EN';
-      }
+      const currentLang = localStorage.getItem('preferred-lang') || 'pt';
+      const newLang = currentLang === 'pt' ? 'en' : 'pt';
+      changeLanguage(newLang);
   });
 });

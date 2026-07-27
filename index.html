@@ -16,11 +16,11 @@
                 <h2>Lobato<span>Dev</span></h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#home" data-i18n="nav-home">Home</a></li>
+                <li><a href="#sobre" data-i18n="nav-about">Sobre</a></li>
+                <li><a href="#habilidades" data-i18n="nav-skills">Habilidades</a></li>
+                <li><a href="#projetos" data-i18n="nav-projects">Projetos</a></li>
+                <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
             </ul>
             <div class="hamburguer">
                 <span></span><span></span><span></span>
@@ -37,7 +37,7 @@
 
                 <div class="status-badge">
                     <span class="pulse-dot"></span>
-                    <span class="status-text">OPEN TO WORK</span>
+                    <span class="status-text" data-i18n="open-to-work">OPEN TO WORK</span>
                 </div>
             </div>
         </div>
@@ -52,18 +52,18 @@
                     </div>
                     <div class="profile-info">
                         <h3>Lobato</h3>
-                        <p>Full-Stack Developer</p>
-                        <a href="#contato" class="btn-sidebar">Fale Comigo</a>
+                        <p data-i18n="hero-role">Full-Stack Developer</p>
+                        <a href="#contato" class="btn-sidebar" data-i18n="btn-contact-me">Fale Comigo</a>
                     </div>
                 </div>
             </div>
 
             <div class="hero-content">
-                <h1 class="hero-title">
+                <h1 class="hero-title" data-i18n="hero-title">
                     Soluções escaláveis<br>
                     <span class="gradient-purple">Experiência Flúida.</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-i18n="hero-subtitle">
                     Especialista em construir interfaces modernas e sistemas robustos. 
                     Focado em entregar experiências únicas para o usuário.
                 </p>
@@ -77,8 +77,8 @@
                 </div>
 
                 <div class="hero-cta">
-                    <a href="#projetos" class="btn-main">Ver Projetos</a>
-                    <a href="#sobre" class="btn-link">Sobre Mim →</a>
+                    <a href="#projetos" class="btn-main" data-i18n="btn-projects">Ver Projetos</a>
+                    <a href="#sobre" class="btn-link" data-i18n="btn-about-me">Sobre Mim →</a>
                 </div>
             </div>
         </div>
@@ -94,15 +94,15 @@
                     </div>
                 </div>
                 <div class="sobre-info">
-                    <span class="label-mini">SOBRE</span>
-                    <h2 class="title-modern">Desenvolvimento Full-Stack, <span class="highlight">foco em performance.</span></h2>
-                    <p class="text-p">
+                    <span class="label-mini" data-i18n="about-label">SOBRE</span>
+                    <h2 class="title-modern" data-i18n="about-title">Desenvolvimento Full-Stack, <span class="highlight">foco em performance.</span></h2>
+                    <p class="text-p" data-i18n="about-desc">
                         Desenvolvo soluções end-to-end, unindo a robustez do <strong>Java</strong> no back-end com a agilidade do <strong>JavaScript e React</strong> no front-end.
                     </p>
                     <div class="tech-specialties">
                         <div class="spec-item">
                             <i class="fab fa-java"></i>
-                            <span>Backend Java</span>
+                            <span data-i18n="spec-backend">Backend Java</span>
                         </div>
                         <div class="spec-item">
                             <i class="fab fa-node-js"></i>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="spec-item">
                             <i class="fab fa-react"></i>
-                            <span>React Frontend</span>
+                            <span data-i18n="spec-frontend">React Frontend</span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-database"></i>
@@ -129,9 +129,9 @@
     <section id="projetos" class="projetos">
         <div class="container">
             <div class="projetos-header">
-                <span class="label-mini">PORTFÓLIO</span>
-                <h2 class="title-modern">Projetos em <span class="highlight">Destaque.</span></h2>
-                <p class="subtitle-projetos">Uma seleção de sistemas desenvolvidos com foco em escalabilidade e experiência do usuário.</p>
+                <span class="label-mini" data-i18n="projects-label">PORTFÓLIO</span>
+                <h2 class="title-modern" data-i18n="projects-title">Projetos em <span class="highlight">Destaque.</span></h2>
+                <p class="subtitle-projetos" data-i18n="projects-subtitle">Uma seleção de sistemas desenvolvidos com foco em escalabilidade e experiência do usuário.</p>
             </div>
             
             <div class="projetos-grid-vertical">
@@ -142,7 +142,7 @@
                         <h3>plstock</h3>
                     </div>
                     
-                    <p class="card-v-desc">
+                    <p class="card-v-desc" data-i18n="plstock-desc">
                         Sistema completo de gerenciamento de estoque, produtos e finanças para controle de vendas do meu próprio negócio de doces.
                     </p>
 
@@ -172,7 +172,7 @@
                         <h3>plmarket</h3>
                     </div>
                     
-                    <p class="card-v-desc">
+                    <p class="card-v-desc" data-i18n="plmarket-desc">
                         Plataforma de e-commerce e marketplace com foco em performance, segurança e uma experiência de compra fluida.
                     </p>
 
@@ -200,9 +200,9 @@
         <div class="container">
             <div class="skills-wrapper">
                 <div class="skills-info">
-                    <span class="label-mini">TECH STACK</span>
-                    <h2 class="title-modern">Minhas <span class="highlight">Ferramentas.</span></h2>
-                    <p class="text-p">Tecnologias que utilizo para dar vida a projetos escaláveis e modernos.</p>
+                    <span class="label-mini" data-i18n="skills-label">TECH STACK</span>
+                    <h2 class="title-modern" data-i18n="skills-title">Minhas <span class="highlight">Ferramentas.</span></h2>
+                    <p class="text-p" data-i18n="skills-desc">Tecnologias que utilizo para dar vida a projetos escaláveis e modernos.</p>
                 </div>
                 
                 <div class="skills-grid">
@@ -223,21 +223,21 @@
         <div class="container">
             <div class="contato-wrapper">
                 <div class="contato-content">
-                    <span class="label-mini">DISPONÍVEL PARA OPORTUNIDADES</span>
-                    <h2 class="title-modern">Vamos construir algo <span class="highlight">incrível juntos?</span></h2>
-                    <p class="text-p">Estou sempre aberto a novos desafios e colaborações em projetos Full-Stack.</p>
+                    <span class="label-mini" data-i18n="contact-label">DISPONÍVEL PARA OPORTUNIDADES</span>
+                    <h2 class="title-modern" data-i18n="contact-title">Vamos construir algo <span class="highlight">incrível juntos?</span></h2>
+                    <p class="text-p" data-i18n="contact-desc">Estou sempre aberto a novos desafios e colaborações em projetos Full-Stack.</p>
                     
-                    <a href="#" class="email-link">
+                    <a href="mailto:lobato.ph17@gmail.com" class="email-link">
                         lobato.ph17@gmail.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
                 
                 <div class="contato-links">
                     <div class="footer-column">
-                        <h4>Navegação</h4>
-                        <a href="#home">Home</a>
-                        <a href="#sobre">Sobre</a>
-                        <a href="#projetos">Projetos</a>
+                        <h4 data-i18n="footer-nav-title">Navegação</h4>
+                        <a href="#home" data-i18n="nav-home">Home</a>
+                        <a href="#sobre" data-i18n="nav-about">Sobre</a>
+                        <a href="#projetos" data-i18n="nav-projects">Projetos</a>
                     </div>
                     <div class="footer-column">
                         <h4>Social</h4>
@@ -248,7 +248,7 @@
             </div>
             
             <footer class="footer-bottom">
-                <p>&copy; 2026 Lobato Dev. Construído com foco em performance.</p>
+                <p data-i18n="footer-copy">&copy; 2026 Lobato Dev. Construído com foco em performance.</p>
             </footer>
         </div>
     </section>
