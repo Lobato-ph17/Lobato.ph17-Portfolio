@@ -133,4 +133,45 @@ document.addEventListener("DOMContentLoaded", () => {
     elemento.classList.add("reveal-hidden");
     scrollObserver.observe(elemento);
   });
+
+  // ==========================================
+  // 7. Toggle Light / Dark mode
+  // ==========================================
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        
+        let theme = 'dark';
+        if (document.body.classList.contains('light-theme')) {
+            theme = 'light';
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+        
+        localStorage.setItem('theme', theme);
+  });
+
+  // --- TOGGLE PT / EN (LABEL) ---
+  const langToggleBtn = document.getElementById('lang-toggle');
+  const langLabel = document.getElementById('lang-label');
+
+  langToggleBtn.addEventListener('click', () => {
+      if (langLabel.textContent === 'EN') {
+          langLabel.textContent = 'PT';
+      } else {
+          langLabel.textContent = 'EN';
+      }
+  });
 });
