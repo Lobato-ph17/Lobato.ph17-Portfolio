@@ -9,9 +9,7 @@ export function Navbar({ isDarkMode, toggleTheme }) {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-5">
         
         <div className="relative group/nav">
-          
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/30 via-indigo-600/10 to-purple-600/30 rounded-2xl blur-md opacity-50 group-hover/nav:opacity-80 transition duration-500"></div>
-
+        
           <nav className="relative flex items-center justify-between px-8 py-4 rounded-2xl bg-white/75 dark:bg-zinc-900/80 backdrop-blur-2xl border border-zinc-200/90 dark:border-zinc-800/90 shadow-2xl shadow-zinc-950/10 dark:shadow-zinc-950/50 transition-colors duration-300">
             
             <div className="flex items-center">

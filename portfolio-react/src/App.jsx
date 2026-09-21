@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
+import Hero from './components/Hero';
 
 export function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -19,7 +20,7 @@ export function App() {
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 selection:bg-purple-500 selection:text-white">
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
-    
+        <Hero />
       </main>
     </div>
   );
