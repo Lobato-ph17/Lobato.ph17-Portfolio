@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import { SectionDivider } from './components/ui/SectionDivider';
 
 export function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -22,7 +23,7 @@ export function App() {
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main>
         <Hero />
-
+        <SectionDivider />
         <Skills />
       </main>
     </div>
